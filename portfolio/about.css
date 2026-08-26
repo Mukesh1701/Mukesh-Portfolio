@@ -1,0 +1,168 @@
+/* ===== ABOUT SECTION ===== */
+.about {
+    padding: 100px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.about .pg {
+    padding-top: 20px;
+}
+
+.about .pg h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.about .pg h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3B82F6, #6366F1);
+    border-radius: 3px;
+}
+
+.about .bio-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about .bio-text p {
+    font-size: 1.05rem;
+    color: #64748B;
+    line-height: 1.85;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cards row */
+.about .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.aboutcard {
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    flex: 1 1 280px;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 32px 28px;
+    text-align: center;
+    cursor: default;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.aboutcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3B82F6, #6366F1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.aboutcard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.aboutcard:hover::before {
+    opacity: 1;
+}
+
+.aboutcard .icon {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.aboutcard .icon svg {
+    width: 48px;
+    height: 48px;
+    color: #3B82F6;
+    background: rgba(59, 130, 246, 0.08);
+    padding: 10px;
+    border-radius: 12px;
+    box-sizing: content-box;
+}
+
+.aboutcard h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.aboutcard p {
+    font-size: 0.925rem;
+    color: #64748B;
+    line-height: 1.7;
+}
+
+/* Skills tags in about */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.skill-tag {
+    background: rgba(59, 130, 246, 0.08);
+    color: #3B82F6;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    letter-spacing: 0.03em;
+}
+
+@media (max-width: 1024px) {
+    .about {
+        padding: 80px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        text-align: center;
+        padding: 80px 24px;
+        gap: 40px;
+    }
+
+    .about .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutcard {
+        max-width: 100%;
+        min-width: unset;
+        width: 100%;
+    }
+}
