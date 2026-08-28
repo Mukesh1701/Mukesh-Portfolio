@@ -1,377 +1,391 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mukesh Veeravalli – Web Developer & Photographer</title>
-    <meta name="description" content="Portfolio of Mukesh Veeravalli — a web developer and cinematic photographer from NIT Calicut. Passionate about elegant UI, clean code, and visual storytelling.">
+    <title>Mukesh Veeravalli â€” Developer & Photographer</title>
+    <meta name="description" content="Portfolio of Mukesh Veeravalli â€” a web developer and cinematic photographer from NIT Calicut. Passionate about elegant UI, clean code, and visual storytelling.">
+    <meta name="theme-color" content="#0a0908">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./style.css"/>
-    <link rel="stylesheet" href="./navbar.css"/>
-    <link rel="stylesheet" href="./homepage.css"/>
-    <link rel="stylesheet" href="./about.css"/>
-    <link rel="stylesheet" href="./project.css"/>
-    <link rel="stylesheet" href="./contact.css"/>
-    <link rel="stylesheet" href="./footer.css"/>
-
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/c6c06a5df1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css"/>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./ChatGPT_Image_Jul_20..._imresizer-removebg-preview.png"/>
 </head>
-<body>
+<body data-loading>
+
+    <!-- ========== PRELOADER ========== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-name">
+                <span class="preloader-word">MUKESH</span>
+                <span class="preloader-word preloader-word--serif">VEERAVALLI</span>
+            </div>
+            <div class="preloader-counter"><span id="preloader-count">0</span>%</div>
+        </div>
+        <div class="preloader-bar"><span id="preloader-bar-fill"></span></div>
+    </div>
+
+    <!-- ========== CUSTOM CURSOR ========== -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"><span class="cursor-label" id="cursor-label"></span></div>
+    </div>
+
+    <!-- ========== NOISE OVERLAY ========== -->
+    <div class="noise" aria-hidden="true"></div>
 
     <!-- ========== NAVBAR ========== -->
-    <nav class="header" id="main-nav">
-        <div class="container">
-            <div class="row">
-                <!-- Logo -->
-                <img src="./Copilot_20250720_160147.png" class="logo" alt="Mukesh Logo">
+    <header class="site-header" id="site-header">
+        <a href="#home" class="logo magnetic" data-cursor="HOME">
+            <img src="./Copilot_20250720_160147.png" alt="Mukesh Logo">
+        </a>
+        <nav class="nav" id="main-menu">
+            <a href="#home" class="nav-link magnetic"><sup>01</sup>Home</a>
+            <a href="#about" class="nav-link magnetic"><sup>02</sup>About</a>
+            <a href="#projects" class="nav-link magnetic"><sup>03</sup>Work</a>
+            <a href="#contact" class="nav-link magnetic"><sup>04</sup>Contact</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span>
+        </button>
+    </header>
 
-                <!-- Hamburger -->
-                <button class="nav-toggler" id="nav-toggler" aria-label="Toggle navigation">
-                    <span></span>
+    <!-- Mobile fullscreen menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav>
+            <a href="#home" class="mobile-link"><span>Home</span><em>01</em></a>
+            <a href="#about" class="mobile-link"><span>About</span><em>02</em></a>
+            <a href="#projects" class="mobile-link"><span>Work</span><em>03</em></a>
+            <a href="#contact" class="mobile-link"><span>Contact</span><em>04</em></a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="mailto:veeravallimukesh2006@gmail.com">veeravallimukesh2006@gmail.com</a>
+            <div>
+                <a href="https://github.com/Mukesh1701" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/veeravalli-mukesh-1840b7321/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.instagram.com/mukesh._.chowdary?igsh=eWhiY3V3d3J0a3Rj" target="_blank" rel="noopener">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="smooth-content">
+
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="home">
+            <canvas id="webgl"></canvas>
+            <div class="hero-veil"></div>
+
+            <div class="hero-inner">
+                <div class="hero-topline reveal-line">
+                    <span>PORTFOLIO Â©2025</span>
+                    <span>NIT CALICUT, INDIA</span>
+                    <span>DEV â€” PHOTOGRAPHER</span>
+                </div>
+
+                <h1 class="hero-title" aria-label="Mukesh Veeravalli">
+                    <span class="hero-line"><span class="hero-word">CREATIVE</span></span>
+                    <span class="hero-line"><span class="hero-word"><em>developer</em></span><span class="hero-word hero-word--amp">&amp;</span></span>
+                    <span class="hero-line"><span class="hero-word">PHOTOGRAPHER</span></span>
+                </h1>
+
+                <div class="hero-bottom">
+                    <div class="hero-portrait" data-tilt>
+                        <img src="./WhatsApp_Image_2025-07-20_at_17.27.21_c4f4a0b1-removebg-preview.png" alt="Mukesh Veeravalli">
+                    </div>
+                    <p class="hero-tagline">
+                        A 3rd-year B.Tech student at <strong>NIT Calicut</strong> â€” blending clean
+                        code with creative vision. I build fast, beautiful web experiences and
+                        tell stories through my lens.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn--solid magnetic" data-cursor="VIEW">Selected Work <i class="arrow">â†“</i></a>
+                        <a href="#contact" class="btn btn--ghost magnetic" data-cursor="SAY HI">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-scrollhint">
+                <span>SCROLL</span>
+                <span class="hero-scrollhint-line"></span>
+            </div>
+        </section>
+
+        <!-- ========== MARQUEE ========== -->
+        <div class="marquee marquee--outline" aria-hidden="true">
+            <div class="marquee-track">
+                <span>CLEAN CODE&nbsp;â€”&nbsp;</span><span>VISUAL STORYTELLING&nbsp;â€”&nbsp;</span>
+                <span>CLEAN CODE&nbsp;â€”&nbsp;</span><span>VISUAL STORYTELLING&nbsp;â€”&nbsp;</span>
+                <span>CLEAN CODE&nbsp;â€”&nbsp;</span><span>VISUAL STORYTELLING&nbsp;â€”&nbsp;</span>
+            </div>
+        </div>
+
+        <!-- ========== ABOUT ========== -->
+        <section class="about section" id="about">
+            <div class="section-head">
+                <span class="section-index">[ 02 / 05 ]</span>
+                <span class="section-label">ABOUT</span>
+            </div>
+
+            <h2 class="about-lede split-lines">
+                Hi, I'm <em>Veeravalli Mukesh</em> â€” I build aesthetic, user-friendly
+                websites and tell visually engaging stories through my lens.
+            </h2>
+
+            <div class="about-grid">
+                <div class="about-copy">
+                    <p data-reveal>A 3rd-year undergraduate at <strong>NIT Calicut</strong>, deeply passionate about
+                    blending technology with creativity. I thrive at the intersection of design and
+                    development â€” where imagination meets functionality.</p>
+                    <p data-reveal>Whether it's designing sleek UIs, writing clean responsive code, or exploring
+                    user-centered design, I enjoy turning ideas into smooth interactive web experiences.</p>
+                    <p data-reveal>Outside the screen, I explore the world through photography â€” from fleeting street
+                    scenes to curated portraits and vibrant events. Currently deepening my skills in
+                    <strong>React</strong>, <strong>UI/UX design</strong>, and <strong>Lightroom</strong> post-processing.</p>
+                </div>
+
+                <div class="about-cards">
+                    <article class="about-card" data-reveal>
+                        <span class="about-card-num">001</span>
+                        <h3>Education</h3>
+                        <p>Secondary at <strong>Sasi EM High School</strong> Â· Higher Secondary at
+                        <strong>Sasi New Gen Junior College</strong> Â· B.Tech at
+                        <strong>NIT Calicut</strong>, Kerala.</p>
+                    </article>
+                    <article class="about-card" data-reveal>
+                        <span class="about-card-num">002</span>
+                        <h3>Skills</h3>
+                        <p>Building responsive interfaces with <strong>HTML, CSS & JavaScript</strong>.
+                        Exploring <strong>React</strong> and modern frameworks. Eye for <strong>UI/UX</strong> and visual design.</p>
+                        <div class="skill-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Figma</span>
+                        </div>
+                    </article>
+                    <article class="about-card" data-reveal>
+                        <span class="about-card-num">003</span>
+                        <h3>Experience</h3>
+                        <p>Hands-on with <strong>personal web projects</strong> and college events.
+                        Contributed to <strong>NIT Calicut photography</strong> club. Constantly iterating and learning.</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="stats-row" id="stats">
+                <div class="stat" data-reveal>
+                    <div class="stat-top"><span class="stat-num" data-count="15">0</span><span class="stat-plus">+</span></div>
+                    <span class="stat-label">Projects Shipped</span>
+                </div>
+                <div class="stat" data-reveal>
+                    <div class="stat-top"><span class="stat-num" data-count="300">0</span><span class="stat-plus">+</span></div>
+                    <span class="stat-label">DSA Problems Solved</span>
+                </div>
+                <div class="stat" data-reveal>
+                    <div class="stat-top"><span class="stat-num" data-count="5">0</span><span class="stat-plus">K+</span></div>
+                    <span class="stat-label">Photos Captured</span>
+                </div>
+                <div class="stat" data-reveal>
+                    <div class="stat-top"><span class="stat-num" data-count="3">0</span><span class="stat-plus">RD</span></div>
+                    <span class="stat-label">Year @ NIT Calicut</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== MARQUEE 2 ========== -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>STRATEGY&nbsp;âœº&nbsp;</span><span>UI / UX&nbsp;âœº&nbsp;</span><span>PHOTOGRAPHY&nbsp;âœº&nbsp;</span>
+                <span>STRATEGY&nbsp;âœº&nbsp;</span><span>UI / UX&nbsp;âœº&nbsp;</span><span>PHOTOGRAPHY&nbsp;âœº&nbsp;</span>
+                <span>STRATEGY&nbsp;âœº&nbsp;</span><span>UI / UX&nbsp;âœº&nbsp;</span><span>PHOTOGRAPHY&nbsp;âœº&nbsp;</span>
+            </div>
+        </div>
+
+        <!-- ========== PROJECTS ========== -->
+        <section class="projects" id="projects">
+            <div class="section-head section-head--pad">
+                <span class="section-index">[ 03 / 05 ]</span>
+                <span class="section-label">SELECTED WORK</span>
+            </div>
+
+            <h2 class="projects-title split-lines">
+                Things I've <em>built</em>, shipped &amp; learned from.
+            </h2>
+
+            <div class="projects-pin" id="projects-pin">
+                <div class="projects-track" id="projects-track">
+
+                    <article class="project-card project-card--featured" data-cursor="EXPLORE">
+                        <span class="featured-badge">â˜… FEATURED</span>
+                        <div class="project-icon icon-orange">ðŸ¥—</div>
+                        <span class="project-category">AI Â· WEB APP</span>
+                        <h3>NutriScan AI</h3>
+                        <p>An AI-powered nutrition scanner that analyzes food images and returns
+                        detailed macro &amp; calorie breakdowns. Deployed live on Vercel.</p>
+                        <div class="tech-pills">
+                            <span class="pill js">JavaScript</span>
+                            <span class="pill ai">AI/ML</span>
+                            <span class="pill react">React</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mukesh1701/NutriScan-AI" target="_blank" rel="noopener" class="btn btn--solid magnetic">GitHub</a>
+                            <a href="https://nutri-scan-ai-five.vercel.app" target="_blank" rel="noopener" class="btn btn--ghost magnetic">Live Demo â†—</a>
+                        </div>
+                        <span class="project-index">01</span>
+                    </article>
+
+                    <article class="project-card" data-cursor="EXPLORE">
+                        <div class="project-icon icon-blue">ðŸŒ</div>
+                        <span class="project-category">WEB DESIGN</span>
+                        <h3>Personal Portfolio</h3>
+                        <p>A fully responsive portfolio showcasing my projects, skills and contact
+                        info â€” built from scratch with pure HTML, CSS &amp; JavaScript.</p>
+                        <div class="tech-pills">
+                            <span class="pill html">HTML5</span>
+                            <span class="pill css">CSS3</span>
+                            <span class="pill js">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mukesh1701/Mukesh-Portfolio" target="_blank" rel="noopener" class="btn btn--solid magnetic">GitHub</a>
+                            <a href="https://mukesh-portfolio-six.vercel.app" target="_blank" rel="noopener" class="btn btn--ghost magnetic">Live Demo â†—</a>
+                        </div>
+                        <span class="project-index">02</span>
+                    </article>
+
+                    <article class="project-card" data-cursor="EXPLORE">
+                        <div class="project-icon icon-green">ðŸ“š</div>
+                        <span class="project-category">MOBILE Â· TEAM PROJECT</span>
+                        <h3>EduTracker</h3>
+                        <p>A cross-platform student education tracker built with Flutter &amp; Dart.
+                        Helps students manage tasks, attendance, and academic progress.</p>
+                        <div class="tech-pills">
+                            <span class="pill flutter">Flutter</span>
+                            <span class="pill dart">Dart</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mukesh1701/Group06_EduTracker" target="_blank" rel="noopener" class="btn btn--solid magnetic">GitHub</a>
+                        </div>
+                        <span class="project-index">03</span>
+                    </article>
+
+                    <article class="project-card" data-cursor="EXPLORE">
+                        <div class="project-icon icon-purple">ðŸ¤–</div>
+                        <span class="project-category">AI Â· PYTHON</span>
+                        <h3>Jarvis</h3>
+                        <p>A Python-powered AI assistant inspired by Iron Man's J.A.R.V.I.S â€”
+                        voice commands, task automation, and AI integrations.</p>
+                        <div class="tech-pills">
+                            <span class="pill python">Python</span>
+                            <span class="pill ai">AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mukesh1701/Jarvis" target="_blank" rel="noopener" class="btn btn--solid magnetic">GitHub</a>
+                        </div>
+                        <span class="project-index">04</span>
+                    </article>
+
+                    <article class="project-card" data-cursor="EXPLORE">
+                        <div class="project-icon icon-red">ðŸ’¡</div>
+                        <span class="project-category">DSA Â· PROBLEM SOLVING</span>
+                        <h3>NeetCode Submissions</h3>
+                        <p>A curated repository of NeetCode.io solutions â€” arrays, graphs, dynamic
+                        programming, trees and more, all solved in C++.</p>
+                        <div class="tech-pills">
+                            <span class="pill cpp">C++</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mukesh1701/neetcode-submissions" target="_blank" rel="noopener" class="btn btn--solid magnetic">GitHub</a>
+                        </div>
+                        <span class="project-index">05</span>
+                    </article>
+
+                    <a href="https://github.com/Mukesh1701?tab=repositories" target="_blank" rel="noopener"
+                       class="project-card project-card--more magnetic" data-cursor="ALL REPOS">
+                        <span class="project-index">â†—</span>
+                        <h3>View All<br>Repositories</h3>
+                        <p>@Mukesh1701 on GitHub â€” see everything I've been working on.</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section class="contact section" id="contact">
+            <div class="section-head">
+                <span class="section-index">[ 04 / 05 ]</span>
+                <span class="section-label">CONTACT</span>
+            </div>
+
+            <h2 class="contact-title split-lines">
+                Got an <em>idea</em>?<br>Let's make it real.
+            </h2>
+
+            <form class="contact-form" id="contact-form" data-reveal>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">YOUR EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">SUBJECT</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reason">MESSAGE</label>
+                    <textarea id="reason" name="reason" rows="4" placeholder="Tell me more..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn--solid btn--big magnetic" id="btn-submit">
+                    <span class="btn-text">Send Message</span>
                 </button>
-
-                <!-- Nav Links -->
-                <div class="nav" id="main-menu">
-                    <ul>
-                        <li><a href="#home" id="nav-home">Home</a></li>
-                        <li><a href="#about" id="nav-about">About</a></li>
-                        <li><a href="#projects" id="nav-projects">Projects</a></li>
-                        <li><a href="#contact" id="nav-contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ========== HERO ========== -->
-    <section class="home" id="home">
-        <div class="left">
-            <span class="greeting">👋 Welcome to my portfolio</span>
-            <h2>Hello, I'm</h2>
-            <h1></h1>
-            <p class="tagline">
-                A 3rd-year B.Tech student at NIT Calicut — blending clean code with creative vision.
-                I build fast, beautiful web experiences and tell stories through my lens.
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="hero-btn-primary" id="btn-view-projects">
-                    <i class="fa-solid fa-code"></i> View Projects
-                </a>
-                <a href="#contact" class="hero-btn-secondary" id="btn-contact-me">
-                    <i class="fa-regular fa-envelope"></i> Contact Me
-                </a>
-            </div>
-            <div class="hero-tech">
-                <span class="tech-badge">HTML & CSS</span>
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Photography</span>
-                <span class="tech-badge">Lightroom</span>
-            </div>
-        </div>
-        <div class="right">
-            <img src="./WhatsApp_Image_2025-07-20_at_17.27.21_c4f4a0b1-removebg-preview.png" alt="Mukesh Veeravalli">
-        </div>
-    </section>
-
-    <!-- ========== ABOUT ========== -->
-    <section class="about" id="about">
-        <div class="pg">
-            <h1>About Me</h1>
-            <p>A glimpse into who I am, what drives me, and what I've been building.</p>
-        </div>
-
-        <div class="bio-text">
-            <p>Hi, I'm <strong>Veeravalli Mukesh</strong>, a 3rd-year undergraduate student at NIT Calicut,
-               deeply passionate about blending technology with creativity. I build aesthetic, user-friendly
-               websites and tell visually engaging stories through my lens.</p>
-            <p>I thrive at the intersection of design and development — where imagination meets functionality.
-               Whether it's designing sleek UIs, writing clean responsive code, or exploring user-centered
-               design, I enjoy turning ideas into smooth interactive web experiences.</p>
-            <p>Outside the screen, I explore the world through photography — from fleeting street scenes to
-               curated portraits and vibrant events. Currently deepening my skills in React, UI/UX design,
-               and Lightroom post-processing.</p>
-        </div>
-
-        <div class="row">
-            <!-- Education Card -->
-            <div class="aboutcard" id="card-education">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                    </svg>
-                    <h1>Education</h1>
-                </div>
-                <p>Secondary at <strong>Sasi EM High School</strong> · Higher Secondary at <strong>Sasi New Gen Junior College</strong> · B.Tech at <strong>NIT Calicut</strong>, Kerala.</p>
-            </div>
-
-            <!-- Skills Card -->
-            <div class="aboutcard" id="card-skills">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                    </svg>
-                    <h1>Skills</h1>
-                </div>
-                <p>Building responsive interfaces with <strong>HTML, CSS & JavaScript</strong>. Exploring <strong>React</strong> and modern frameworks. Eye for <strong>UI/UX</strong> and visual design.</p>
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Figma</span>
-                </div>
-            </div>
-
-            <!-- Experience Card -->
-            <div class="aboutcard" id="card-experience">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
-                    </svg>
-                    <h1>Experience</h1>
-                </div>
-                <p>Hands-on with <strong>personal web projects</strong> and college events. Contributed to <strong>NIT Calicut photography</strong> club. Constantly iterating and learning.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PROJECTS ========== -->
-    <section class="projects" id="projects">
-        <div class="pg">
-            <h1>My Projects</h1>
-            <p>Real projects from my GitHub — things I've built, shipped, and learned from.</p>
-            <a href="https://github.com/Mukesh1701" target="_blank" rel="noopener" class="github-profile-link">
-                <i class="fa-brands fa-github"></i> @Mukesh1701 on GitHub
-            </a>
-        </div>
-
-        <div class="allprojects">
-
-            <!-- Project 1: NutriScan AI — FEATURED -->
-            <div class="projectcard featured" id="project-nutriscan">
-                <span class="featured-badge">⭐ Featured</span>
-                <div class="project-header">
-                    <div class="project-icon icon-orange">🥗</div>
-                    <div class="project-meta">
-                        <span class="project-category">AI · Web App</span>
-                        <h2>NutriScan AI</h2>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>An AI-powered nutrition scanner that analyzes food images and returns detailed macro & calorie breakdowns. Built with JavaScript and deployed live on Vercel.</p>
-                    <div class="skills">
-                        <span class="tech-pill js"><i class="fa-brands fa-js"></i> JavaScript</span>
-                        <span class="tech-pill ai">🤖 AI/ML</span>
-                        <span class="tech-pill react"><i class="fa-brands fa-react"></i> React</span>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <a href="https://github.com/Mukesh1701/NutriScan-AI" target="_blank" rel="noopener" class="btn" id="btn-nutriscan-github">
-                        <i class="fa-brands fa-github"></i> GitHub
-                    </a>
-                    <a href="https://nutri-scan-ai-five.vercel.app" target="_blank" rel="noopener" class="btn-outline" id="btn-nutriscan-live">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                    </a>
-                    <div class="repo-stats">
-                        <span><i class="fa-regular fa-circle-dot"></i> JS</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: Portfolio -->
-            <div class="projectcard" id="project-portfolio">
-                <div class="project-header">
-                    <div class="project-icon icon-blue">🌐</div>
-                    <div class="project-meta">
-                        <span class="project-category">Web Design</span>
-                        <h2>Personal Portfolio</h2>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>A fully responsive personal portfolio site showcasing my projects, skills and contact info — built from scratch with pure HTML, CSS & JavaScript. Deployed on Vercel.</p>
-                    <div class="skills">
-                        <span class="tech-pill html"><i class="fa-brands fa-html5"></i> HTML5</span>
-                        <span class="tech-pill css"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                        <span class="tech-pill js"><i class="fa-brands fa-js"></i> JavaScript</span>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <a href="https://github.com/Mukesh1701/Mukesh-Portfolio" target="_blank" rel="noopener" class="btn" id="btn-portfolio-github">
-                        <i class="fa-brands fa-github"></i> GitHub
-                    </a>
-                    <a href="https://mukesh-portfolio-six.vercel.app" target="_blank" rel="noopener" class="btn-outline" id="btn-portfolio-live">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-                    </a>
-                    <div class="repo-stats">
-                        <span><i class="fa-regular fa-circle-dot"></i> CSS</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: EduTracker -->
-            <div class="projectcard" id="project-edutracker">
-                <div class="project-header">
-                    <div class="project-icon icon-green">📚</div>
-                    <div class="project-meta">
-                        <span class="project-category">Mobile App · Team Project</span>
-                        <h2>EduTracker</h2>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>A cross-platform student education tracker app built with Flutter & Dart as a group project. Helps students manage tasks, attendance, and academic progress.</p>
-                    <div class="skills">
-                        <span class="tech-pill flutter">🐦 Flutter</span>
-                        <span class="tech-pill dart">🎯 Dart</span>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <a href="https://github.com/Mukesh1701/Group06_EduTracker" target="_blank" rel="noopener" class="btn" id="btn-edutracker-github">
-                        <i class="fa-brands fa-github"></i> GitHub
-                    </a>
-                    <div class="repo-stats">
-                        <span><i class="fa-regular fa-circle-dot"></i> Dart</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4: Jarvis -->
-            <div class="projectcard" id="project-jarvis">
-                <div class="project-header">
-                    <div class="project-icon icon-purple">🤖</div>
-                    <div class="project-meta">
-                        <span class="project-category">AI · Python</span>
-                        <h2>Jarvis</h2>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>A Python-powered AI assistant project inspired by Iron Man's J.A.R.V.I.S — built to explore voice commands, task automation, and AI integrations.</p>
-                    <div class="skills">
-                        <span class="tech-pill python"><i class="fa-brands fa-python"></i> Python</span>
-                        <span class="tech-pill ai">🤖 AI</span>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <a href="https://github.com/Mukesh1701/Jarvis" target="_blank" rel="noopener" class="btn" id="btn-jarvis-github">
-                        <i class="fa-brands fa-github"></i> GitHub
-                    </a>
-                    <div class="repo-stats">
-                        <span><i class="fa-regular fa-circle-dot"></i> Python</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5: NeetCode Submissions -->
-            <div class="projectcard" id="project-neetcode">
-                <div class="project-header">
-                    <div class="project-icon icon-red">💡</div>
-                    <div class="project-meta">
-                        <span class="project-category">DSA · Problem Solving</span>
-                        <h2>NeetCode Submissions</h2>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>A curated repository of my NeetCode.io problem solutions — covering arrays, graphs, dynamic programming, trees and more, all solved in C++.</p>
-                    <div class="skills">
-                        <span class="tech-pill cpp">⚙️ C++</span>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <a href="https://github.com/Mukesh1701/neetcode-submissions" target="_blank" rel="noopener" class="btn" id="btn-neetcode-github">
-                        <i class="fa-brands fa-github"></i> GitHub
-                    </a>
-                    <div class="repo-stats">
-                        <span><i class="fa-regular fa-circle-dot"></i> C++</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View All Card -->
-            <a href="https://github.com/Mukesh1701?tab=repositories" target="_blank" rel="noopener" class="more-repos-card" id="card-more-repos">
-                <i class="fa-brands fa-github"></i>
-                <h3>View All Repositories</h3>
-                <p>See everything I've been working on →</p>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- ========== CONTACT ========== -->
-    <section class="contact" id="contact">
-        <div class="pg">
-            <h1>Contact Me</h1>
-            <p>Got a question, a project idea, or just want to say hi? Drop me a message!</p>
-        </div>
-
-        <div class="form_containor">
-            <form id="contact-form" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required/>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="What's this about?" required/>
-                </div>
-                <div class="form-group">
-                    <label for="reason">Message</label>
-                    <textarea id="reason" name="reason" rows="5" placeholder="Tell me more..." required></textarea>
-                </div>
-                <div class="form-submit">
-                    <button type="submit" id="btn-submit">
-                        <i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message
-                    </button>
-                </div>
+                <p class="form-status" id="form-status" role="status"></p>
             </form>
-        </div>
 
-        <div class="contact-info">
-            <div class="contact-info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>veeravallimukesh2006@gmail.com</span>
+            <div class="contact-info">
+                <a href="mailto:veeravallimukesh2006@gmail.com" class="contact-info-item magnetic" data-cursor="MAIL">
+                    <span>EMAIL</span><strong>veeravallimukesh2006@gmail.com</strong>
+                </a>
+                <a href="https://www.linkedin.com/in/veeravalli-mukesh-1840b7321/" target="_blank" rel="noopener" class="contact-info-item magnetic" data-cursor="OPEN">
+                    <span>LINKEDIN</span><strong>Veeravalli Mukesh</strong>
+                </a>
             </div>
-            <div class="contact-info-item">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>Veeravalli Mukesh</span>
+        </section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer">
+            <div class="footer-cta">
+                <span class="section-label">[ 05 / 05 ] â€” WHAT'S NEXT?</span>
+                <a href="mailto:veeravallimukesh2006@gmail.com" class="footer-giant magnetic" data-cursor="MAIL ME">
+                    LET'S<br><em>TALK</em>
+                    <svg class="footer-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
-        </div>
-    </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <div class="footer1">
-            <p>
-                Whether you need a personal website or a full-scale web solution, I'm here to help.
-                <span class="email">veeravallimukesh2006@gmail.com</span>
-            </p>
-            <h1>Let's build<br><span>something</span><br>great together.</h1>
-        </div>
-
-        <div class="footer2">
-            <p class="footer-copy">© 2025 Mukesh Veeravalli. All rights reserved.</p>
-            <div class="footer-socials">
-                <div class="socialitem">
-                    <a href="https://www.instagram.com/mukesh._.chowdary?igsh=eWhiY3V3d3J0a3Rj" class="fa fa-instagram" target="_blank" rel="noopener" aria-label="Instagram"></a>
-                    <a href="https://www.instagram.com/mukesh._.chowdary?igsh=eWhiY3V3d3J0a3Rj" class="footerlink" target="_blank" rel="noopener">@mukesh._.chowdary</a>
-                </div>
-                <div class="socialitem">
-                    <a href="mailto:veeravallimukesh2006@gmail.com" class="fa fa-google" aria-label="Email"></a>
-                    <a href="mailto:veeravallimukesh2006@gmail.com" class="footerlink">veeravallimukesh2006@gmail.com</a>
-                </div>
-                <div class="socialitem">
-                    <a href="https://www.linkedin.com/in/veeravalli-mukesh-1840b7321/" class="fa fa-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"></a>
-                    <a href="https://www.linkedin.com/in/veeravalli-mukesh-1840b7321/" class="footerlink" target="_blank" rel="noopener">Veeravalli Mukesh</a>
+            <div class="footer-bottom">
+                <p>Â© 2025 Mukesh Veeravalli â€” All rights reserved.</p>
+                <p class="footer-clock">LOCAL TIME â€” <span id="clock">00:00:00</span></p>
+                <div class="footer-socials">
+                    <a href="https://github.com/Mukesh1701" target="_blank" rel="noopener" class="magnetic">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/veeravalli-mukesh-1840b7321/" target="_blank" rel="noopener" class="magnetic">LINKEDIN</a>
+                    <a href="https://www.instagram.com/mukesh._.chowdary?igsh=eWhiY3V3d3J0a3Rj" target="_blank" rel="noopener" class="magnetic">INSTAGRAM</a>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="./navbar.js"></script>
-    <script src="./homescript.js"></script>
+    </main>
+
+    <!-- ========== LIBS (CDN) ========== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+    <script src="./js/main.js"></script>
+
 </body>
 </html>
