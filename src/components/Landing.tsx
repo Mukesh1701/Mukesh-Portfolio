@@ -29,6 +29,16 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">Web Developer</div>
             </h2>
           </div>
+        {/* Mobile photo/avatar - shown only on mobile when the 3D character is hidden */}
+          <div className="mobile-photo">
+            <img
+              src="/images/mv-avatar.png"
+              alt="Mukesh Veeravalli"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
         </div>
         {children}
       </div>

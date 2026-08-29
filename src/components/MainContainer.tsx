@@ -13,11 +13,15 @@ import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
+  const [isDesktopView, setIsDesktopView] = useState<boolean>(
+    window.innerWidth > 768
+  );
   const [shouldRenderCharacter, setShouldRenderCharacter] = useState(false);
 
   useEffect(() => {
     const resizeHandler = () => {
       setSplitText();
+      setIsDesktopView(window.innerWidth > 768);
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
@@ -57,7 +61,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
-      {shouldRenderCharacter && children}
+      {isDesktopView && shouldRenderCharacter && children}
       <div className="container-main">
         <Landing />
         <About />
