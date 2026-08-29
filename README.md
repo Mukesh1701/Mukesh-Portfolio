@@ -32,9 +32,6 @@ npm run dev      # local dev server
 npm run build    # production build
 ```
 
-## 🙌 Credits
-
-Layout inspired by the open-source [portfolio-website](https://github.com/red1-for-hek/portfolio-website) template (MIT License), customized and built by **Mukesh Veeravalli**.
 
 ## 📫 Connect
 
