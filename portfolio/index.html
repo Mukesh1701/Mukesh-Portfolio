@@ -13,6 +13,36 @@
     <link rel="icon" type="image/png" href="./ChatGPT_Image_Jul_20..._imresizer-removebg-preview.png" />
 </head>
 <body data-loading>
+    <!-- Emergency loader bypass: this tiny inline script guarantees the loading
+         screen can NEVER trap the page. It works even if every CDN/library fails. -->
+    <script>
+        (function () {
+            var escaped = false;
+            function force() {
+                if (escaped) return;
+                escaped = true;
+                var s = document.getElementById("loadingScreen");
+                if (s) s.classList.add("is-done");
+                var h = document.getElementById("loadingHeader");
+                if (h) h.style.display = "none";
+                document.body.classList.remove("is-loading");
+            }
+            window.__loaderSkip = function () {
+                var w = document.getElementById("loadingWrap");
+                if (w && !w.classList.contains("is-clicked")) {
+                    w.classList.add("is-clicked");
+                }
+                force();
+            };
+            window.addEventListener("load", function () {
+                setTimeout(force, 6000);
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                var w = document.getElementById("loadingWrap");
+                if (w) w.addEventListener("click", window.__loaderSkip);
+            });
+        })();
+    </script>
     <!-- ========== LOADING SCREEN ========== -->
     <div class="loading-header" id="loadingHeader">
         <a href="#home" class="loader-title" data-cursor="disable">Mukesh Veeravalli</a>
@@ -331,10 +361,10 @@
         </div><!-- /container-main -->
     </main>
 
-    <!-- ========== LIBS ========== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <!-- ========== LIBS (served locally — no CDN dependency) ========== -->
+    <script src="./vendor/gsap.min.js"></script>
+    <script src="./vendor/ScrollTrigger.min.js"></script>
+    <script src="./vendor/lenis.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
