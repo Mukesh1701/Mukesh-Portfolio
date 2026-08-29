@@ -43,6 +43,20 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {}, [loading]);
 
+  // Safety net: if the 3D model stalls or WebGL fails, force-finish the
+  // loading screen after 8s so the page and scroll are never locked.
+  useEffect(() => {
+    if (!isLoading) return;
+    const fallback = setTimeout(() => {
+      setLoading(100);
+      import("../components/utils/initialFX").then((module) => {
+        if (module.initialFX) module.initialFX();
+      });
+      setIsLoading(false);
+    }, 8000);
+    return () => clearTimeout(fallback);
+  }, [isLoading]);
+
   return (
     <LoadingContext.Provider value={value as LoadingType}>
       {isLoading && <Loading percent={loading} />}
