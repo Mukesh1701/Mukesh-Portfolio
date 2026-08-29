@@ -151,7 +151,7 @@ export const config = {
             title: "Play Chess vs AI",
             category: "AI / Game Engine",
             technologies: "React, chess.js, Stockfish WASM Engine",
-            image: "/images/RedxChess.png",
+            image: "/images/ChessAI.png",
             description: "Play a full game of chess against a built-in AI engine right in the browser — with move history, captured-piece tracking, and an integrated chat assistant.",
             link: "/play"
         }

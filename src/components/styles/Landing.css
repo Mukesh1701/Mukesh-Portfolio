@@ -3,10 +3,33 @@
   display: none;
 }
 
-/* Remove mobile photo and ensure 3D character is always hidden on mobile */
+/* Mobile: show the 3D character below the hero text */
 @media only screen and (max-width: 768px) {
   .character-model {
+    display: block !important;
+    position: relative !important;
+    height: 300px !important;
+    width: 100% !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    order: 3;
+    pointer-events: none;
+  }
+
+  /* Remove desktop masks that would cover content below */
+  .character-model::before,
+  .character-model::after {
     display: none !important;
+  }
+
+  .character-hover {
+    display: none !important;
+  }
+
+  .character-rim {
+    width: 260px;
+    height: 260px;
   }
 
   .landing-section,
