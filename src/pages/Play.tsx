@@ -378,7 +378,7 @@ const Play = () => {
               </div>
               <div className="player-details">
                 <span className="player-name">Mukesh</span>
-                <span className="player-rating">{engineThinking ? '🤔 Thinking...' : 'ELO 3640'}</span>
+                <span className="player-rating">{engineThinking ? '🤔 Thinking...' : 'AI Engine'}</span>
               </div>
             </div>
             <div className="captured-pieces">
