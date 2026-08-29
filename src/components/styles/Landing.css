@@ -5,6 +5,14 @@
 
 /* Mobile: show the 3D character below the hero text */
 @media only screen and (max-width: 768px) {
+  .character-container {
+    position: relative;
+    order: 4;
+    width: 100%;
+    height: 310px;
+    margin: 10px auto 0;
+  }
+
   .character-model {
     display: block !important;
     position: relative !important;
@@ -13,7 +21,6 @@
     left: auto !important;
     bottom: auto !important;
     transform: none !important;
-    order: 3;
     pointer-events: none;
   }
 
@@ -28,8 +35,11 @@
   }
 
   .character-rim {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .landing-section,
@@ -52,8 +62,8 @@
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
-    padding-top: 40px;
-    /* Shift higher up */
+    padding-top: 76px;
+    /* Clear the fixed header on mobile */
     margin-bottom: 20px;
     z-index: 10;
     text-align: center;
@@ -93,8 +103,6 @@
     /* Space between name and subtitles */
     z-index: 10;
     background: transparent;
-    padding-bottom: 50px;
-    /* Add bottom padding for scroll space */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,8 +110,9 @@
     height: auto !important;
     /* Force auto height */
     width: 100% !important;
-    order: 3;
-    /* Third: Subtitles */
+    order: 2;
+    /* Second: Subtitles */
+    padding-bottom: 0;
   }
 
   .landing-info h3 {
